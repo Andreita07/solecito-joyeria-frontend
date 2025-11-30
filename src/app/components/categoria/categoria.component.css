@@ -1,0 +1,100 @@
+/* Contenedor */
+.tabla-container {
+    width: 90%;
+    margin: 20px auto;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+  
+  /* Título */
+  .tabla-container h2 {
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  /* Searchbox */
+  .search-box {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline-color: #4c8bf5;
+  }
+  
+  /* Tabla */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  /* Encabezado */
+  .styled-table thead {
+    background-color: #4c8bf5;
+    color: white;
+  }
+  
+  .styled-table th {
+    padding: 12px;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  /* Filas */
+  .styled-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  
+  /* Hover */
+  .styled-table tbody tr:hover {
+    background-color: #f2f6ff;
+  }
+  
+  /* Primera fila color alternado */
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  /* Sin resultados */
+  .notfound {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+  }
+  
+  /* Responsive */
+  @media (max-width: 700px) {
+    .styled-table,
+    .styled-table thead {
+      display: none;
+    }
+  
+    .styled-table tr {
+      display: block;
+      margin-bottom: 12px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  
+    .styled-table td {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 5px;
+      font-size: 15px;
+    }
+  
+    .styled-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #444;
+    }
+  }
+  

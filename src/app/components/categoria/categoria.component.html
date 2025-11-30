@@ -1,0 +1,34 @@
+
+<button mat-raised-button color="accent" (click)="abrirModal()">
+  Nueva Categoría
+</button>
+
+<div class="tabla-container">
+    <h2>Categorías</h2>
+  
+    <div class="search-box">
+      <input type="text" placeholder="Buscar...">
+    </div>
+  
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th (click)="sort('idCategoria')">ID</th>
+          <th (click)="sort('nombre')">Nombre</th>
+          <th (click)="sort('descripcion')">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of filteredCategorias">
+          <td>{{c.idCategoria}}</td>
+          <td>{{c.nombre}}</td>
+          <td>{{c.descripcion}}</td>
+        </tr>
+  
+        <tr *ngIf="filteredCategorias.length === 0">
+          <td colspan="3" class="notfound">No hay resultados</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
