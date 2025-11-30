@@ -16,6 +16,7 @@
           <th (click)="sort('idCategoria')">ID</th>
           <th (click)="sort('nombre')">Nombre</th>
           <th (click)="sort('descripcion')">Descripción</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -23,6 +24,14 @@
           <td>{{c.idCategoria}}</td>
           <td>{{c.nombre}}</td>
           <td>{{c.descripcion}}</td>
+          <td>
+            <button mat-icon-button (click)="editar(c.idCategoria, c)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="delete(c.idCategoria)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
         </tr>
   
         <tr *ngIf="filteredCategorias.length === 0">

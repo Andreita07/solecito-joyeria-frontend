@@ -70,4 +70,35 @@ export class CategoriaComponent implements OnInit {
       error: err => console.error(err)
     });
   }
+
+  delete(id: number) {
+    this.categoriaService.eliminarCategoria(id).subscribe({
+      next: () => {
+        this.filteredCategorias = this.filteredCategorias.filter(c => c.idCategoria !== id);
+      },
+      error: err => console.error(err)
+    });
+  }
+
+  editar(id: number, categoria: any) {
+    const dialogRef = this.dialog.open(CategoriaAddComponent, {
+      width: '400px',
+      data: categoria
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.categoriaService.actualizarCategoria(id,result).subscribe({
+          next: () => window.location.reload(),
+          error: err => console.error(err)
+        });
+      }
+    });
+  }
+
+  // Método para limpiar el filtro
+  clearFilter() {
+    this.search = '';
+    this.filteredCategorias = [...this.categorias];
+  }
 }
